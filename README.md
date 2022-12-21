@@ -26,3 +26,6 @@ const add = (x, y) => {
 const curryAdd10 = curried(add)(10)
 const curryAdd2 = curryAdd10(2) // 12
 ```
+
+## :gear: 更新日志
+[CHANGELOG.md](./CHANGELOG.md)
