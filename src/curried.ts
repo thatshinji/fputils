@@ -1,10 +1,10 @@
-const curried = (func) => {
+const curried = (func: any) => {
   const len = func.length
-  const partial = (func, argsList, argsLen) => {
-    if(argsList.length > argsLen) {
+  const partial = (func: any, argsList:any[], argsLen: number) => {
+    if(argsList.length >= argsLen) {
       return func(...argsList)
     }
-    return (...args) => {
+    return (...args: any) => {
       return partial(func, [...argsList, ...args], argsLen)
     }
   }

@@ -15,27 +15,19 @@ const babelCompiler = (opt) => {
     babelrc:false,
     presets: [
       [
-        '@babel/preset-typescript',
-        {
-          allowDeclareFields: true,
-          allowNamespaces: true,
-          dts: true,
-          optimizeConstEnums: true,
-        }
-      ],
-      [
         '@babel/preset-env',
           {
             targets: {
               browsers: 'last 2 versions, > 1%, ie >=8, Chrome >= 45, safari >= 10',
-              node: true
+              node: "current"
             },
             modules: false,
             loose: false,
             useBuiltIns: 'usage',
             corejs: 3,
           },
-        ]
+        ],
+        '@babel/preset-typescript',
       ],
     plugins: [
       [
@@ -49,6 +41,11 @@ const babelCompiler = (opt) => {
     babelHelpers: 'inline',
     exclude: 'node_modules/**',
     extensions,
+    env: {
+      "test": {
+        "plugins": ["istanbul"]
+      }
+    }
   })
 }
 
