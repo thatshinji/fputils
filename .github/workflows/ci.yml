@@ -1,22 +1,19 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
 name: cii
-
 on:
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-
 jobs:
-    commitlint:
-    runs-on: ubuntu-latest
-    steps:
-      -uses: action/checkout@v3
-      with:
-        fetch-depth: 0
-      -uses: wagoid/commitlint-github-action@v4
+  commitlint:
+  runs-on: ubuntu-latest
+  steps:
+    -uses: action/checkout@v3
+    with:
+      fetch-depth: 0
+    -uses: wagoid/commitlint-github-action@v4
   lint:
     needs: commitlint
     runs-on: ubuntu-latest
