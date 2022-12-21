@@ -1,53 +1,54 @@
-const pkg = require('../package.json')
-const babel = require('@rollup/plugin-babel')
+const pkg = require("../package.json");
+const babel = require("@rollup/plugin-babel");
 
-const version = pkg.version
-const name = pkg.name
+const version = pkg.version;
+const name = pkg.name;
 const banner = `/*!
   * ${name} ${version}
   * Licensed under MIT
   */
 `;
-const extensions = ['.js', '.ts']
+const extensions = [".js", ".ts"];
 
 const babelCompiler = (opt) => {
   return babel({
-    babelrc:false,
+    babelrc: false,
     presets: [
       [
-        '@babel/preset-env',
-          {
-            targets: {
-              browsers: 'last 2 versions, > 1%, ie >=8, Chrome >= 45, safari >= 10',
-              node: "current"
-            },
-            modules: false,
-            loose: false,
-            useBuiltIns: 'usage',
-            corejs: 3,
+        "@babel/preset-env",
+        {
+          targets: {
+            browsers:
+              "last 2 versions, > 1%, ie >=8, Chrome >= 45, safari >= 10",
+            node: "current",
           },
-        ],
-        '@babel/preset-typescript',
+          modules: false,
+          loose: false,
+          useBuiltIns: "usage",
+          corejs: 3,
+        },
       ],
+      "@babel/preset-typescript",
+    ],
     plugins: [
       [
-        '@babel/plugin-transform-runtime',
+        "@babel/plugin-transform-runtime",
         {
           helpers: false,
           regenerator: false,
-        }
+        },
       ],
     ],
-    babelHelpers: 'inline',
-    exclude: 'node_modules/**',
+    babelHelpers: "inline",
+    exclude: "node_modules/**",
     extensions,
     env: {
-      "test": {
-        "plugins": ["istanbul"]
-      }
-    }
-  })
-}
+      test: {
+        plugins: ["istanbul"],
+      },
+    },
+  });
+};
 
-exports.banner = banner
-exports.babelCompiler = babelCompiler
+exports.banner = banner;
+exports.babelCompiler = babelCompiler;

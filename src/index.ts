@@ -1,5 +1,3 @@
-import curried from "./curried"
+import curried from "./curried";
 
-export {
-  curried
-}
+export { curried };

@@ -1,18 +1,18 @@
-const nodeResolve = require('@rollup/plugin-node-resolve')
-const common = require('./rollup.js')
+const nodeResolve = require("@rollup/plugin-node-resolve");
+const common = require("./rollup.js");
 
 module.exports = {
-  input: 'src/index.ts',
+  input: "src/index.ts",
   output: {
-    file: 'dist/index.esm.js',
-    format: 'es',
-    banner: common.banner
+    file: "dist/index.esm.js",
+    format: "es",
+    banner: common.banner,
   },
   plugins: [
     nodeResolve({
       main: true,
-      extensions: ['.js', '.ts']
+      extensions: [".js", ".ts"],
     }),
-    common.babelCompiler()
-  ]
-}
+    common.babelCompiler(),
+  ],
+};
