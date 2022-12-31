@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/badge/npm-0.0.1-orange.svg)](https://www.npmjs.com/package/@evageeks/fputils)
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/thatshinji/fputils.svg)](http://isitmaintained.com/project/thatshinji/fputils "Percentage of issues still open")
 [![actions](https://github.com/thatshinji/fputils/actions/workflows/ci.yml/badge.svg)](https://github.com/thatshinji/fputils/actions)
-**一个纯函数式的工具库**
+#### **一个纯函数式的工具库**
 
 
 ## :star: 特性
