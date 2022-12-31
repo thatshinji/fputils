@@ -3,11 +3,13 @@ const babel = require("@rollup/plugin-babel");
 
 const version = pkg.version;
 const name = pkg.name;
+
 const banner = `/*!
   * ${name} ${version}
   * Licensed under MIT
   */
 `;
+
 const extensions = [".js", ".ts"];
 
 const babelCompiler = (opt) => {
@@ -34,12 +36,12 @@ const babelCompiler = (opt) => {
       [
         "@babel/plugin-transform-runtime",
         {
-          helpers: false,
-          regenerator: false,
+          helpers: true,
+          regenerator: true,
         },
       ],
     ],
-    babelHelpers: "inline",
+    babelHelpers: "runtime",
     exclude: "node_modules/**",
     extensions,
     env: {
