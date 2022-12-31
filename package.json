@@ -1,6 +1,6 @@
 {
   "name": "@evageeks/fputils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a functional-programming utils library",
   "main": "dist/index.js",
   "jsnext:main": "dist/index.esm.js",
